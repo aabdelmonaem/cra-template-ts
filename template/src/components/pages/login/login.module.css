@@ -1,0 +1,174 @@
+.background {
+    width: 430px;
+    height: 550px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 220px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:first-child {
+    background: linear-gradient(#1845ad,
+            #23a2f6);
+    left: -80px;
+    top: -80px;
+}
+
+.shape:last-child {
+    background: linear-gradient(to right,
+            #ff512f,
+            #f09819);
+    right: -30px;
+    bottom: -80px;
+}
+
+.formStyle {
+    height: 550px;
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+.formStyle * {
+    /* font-family: 'Poppins', sans-serif; */
+    /* color: #ffffff; */
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.formStyle h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.formStyle label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.formStyle input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+.buttonStyle {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
+.option {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* .option div {
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    text-align: center;
+}
+
+.option div:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+} */
+
+body[dir="ltr"] .fieldIcon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+body[dir="rtl"] .fieldIcon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+body[dir="ltr"] .passwordInput {
+    padding-right: 35px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+
+body[dir="rtl"] .passwordInput {
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 35px;
+}
+
+.roundedContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    /* Set the desired width */
+    height: 50px;
+    /* Set the desired height */
+    border-radius: 50%;
+    /* Make it rounded */
+    background-color: #3498db;
+    /* Set the background color */
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
+.roundedContainer:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
+.roundedContainer span {
+    max-width: 100%;
+    /* Ensure the image doesn't exceed the container size */
+    max-height: 100%;
+    /* Ensure the image doesn't exceed the container size */
+    font-size: 1.5em;
+}

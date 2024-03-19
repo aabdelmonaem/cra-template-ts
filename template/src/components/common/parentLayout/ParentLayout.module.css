@@ -1,0 +1,65 @@
+.mainContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+.pageTemplateContainer {
+  height: 100%;
+  width: 100%;
+  background-color: var(--rootBG);
+}
+
+body[layout-type="full"]:not(.authentication-screen) .pageTemplateEN {
+  margin-right: 0px;
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  height: calc(100% - 70px);
+}
+
+body[layout-type="full"]:not(.authentication-screen) .pageTemplateAR {
+  margin-right: 200px;
+  margin-left: 0px;
+  width: calc(100% - 200px);
+  height: calc(100% - 70px);
+}
+
+body[layout-type="compact"]:not(.authentication-screen) .pageTemplateAR {
+  margin-right: 60px;
+  width: calc(100% - 60px);
+  height: calc(100% - 70px);
+}
+
+body[layout-type="compact"]:not(.authentication-screen) .pageTemplateEN {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+  height: calc(100% - 70px);
+}
+
+body[layout-type="full"]:has(.authentication-screen) .pageTemplateEN {
+  margin-right: 0px;
+  margin-left: 0;
+  width: 100%;
+}
+
+body[layout-type="full"]:has(.authentication-screen) .pageTemplateAR {
+  margin-right: 0px;
+  margin-left: 0;
+  width: 100%;
+}
+
+body[layout-type="compact"]:has(.authentication-screen) .pageTemplateEN {
+  margin-right: 0px;
+  margin-left: 0;
+  width: 100%;
+}
+
+body[layout-type="compact"]:has(.authentication-screen) .pageTemplateAR {
+  margin-right: 0px;
+  margin-left: 0;
+  width: 100%;
+}

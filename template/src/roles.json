@@ -1,0 +1,8 @@
+{
+    "Roles": [
+        {
+            "Key": "HOME_KEY",
+            "RoleKey": "ROLE_DASHBOARD_VIEW_MAP"
+        }
+    ]
+}
