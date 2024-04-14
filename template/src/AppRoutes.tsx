@@ -41,7 +41,7 @@ const IsAuth: React.FC<IsAuthProps> = (props) => {
     const location = useLocation();
 
     return !auth.user ? (
-       <>{props.children}</> 
+        <>{props.children}</>
     ) : (
         <Navigate to="/" state={{ from: location }} replace />
     );
@@ -63,11 +63,15 @@ function AppRoutes() {
             if (auth.user) {
                 try {
                     setFilteredRoutes(
-                        routes.filter((route) =>
-                            auth.checkPermission(route.requiredPermission)
+                        routes.filter((route) => {
+                            if (!route.requiredPermission.length)
+                                return true;
+                            else
+                                return auth.checkPermission(route.requiredPermission);
+                        }
+
                         )
                     );
-                    console.log(filteredRoutes);
                 } catch (error) {
                     console.error("Error fetching routes configurations:", error);
                 }
@@ -84,9 +88,9 @@ function AppRoutes() {
 
     useEffect(() => {
         if (location.pathname !== "/login" && !auth.user) {
-          navigate("/login", { replace: true });
+            navigate("/login", { replace: true });
         }
-      }, [location, auth, navigate]);
+    }, [location, auth, navigate]);
 
     return (
         <Routes>
@@ -103,15 +107,18 @@ function AppRoutes() {
                     }
                 />
                 {filteredRoutes.map((route, index) => (
-                    <Route
-                        key={index + 1}
-                        path={route.path}
-                        element={
-                            <RequireAuth permissions={route.requiredPermission}>
-                                {<route.component />}
-                            </RequireAuth>
-                        }
-                    />
+                     <Route
+                     key={index + 1}
+                     path={route.path}
+                     element={
+                       route.requiredPermission.length ?
+                         <RequireAuth permissions={route.requiredPermission}>
+                           {<route.component />}
+                         </RequireAuth>
+                         :
+                         <route.component />
+                     }
+                   />
                 ))}
 
                 <Route
